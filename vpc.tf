@@ -1,10 +1,9 @@
-module "vpc" {
-    source  = "terraform-google-modules/network/google"
-    version = "2.5.0"
-
-    project_id   = var.project
-    network_name = "hashicat-vpc"
-    routing_mode = "GLOBAL"
+module "network" {
+  source  = "app.terraform.io/andrewballinger-training/network/google"
+  version = "2.5.0"
+  
+  project_id   = var.project
+  network_name = "hashicat-vpc"
 
 subnets = [
   {
